@@ -26,3 +26,10 @@
         - (from backend) in package.json, confirm devDependencies: {} object
         - (from backend) in package.json, in "scripts", at key:value... "start": "nodemon server.js",
         - ^ this will allow the backend server to run with nodemon for continual update re-rendering automatically, initialized with npm start
+  4. fetch products data from backend
+     1. set proxy in package.json
+        - (from frontend) in package.json, beneath "name":, add "proxy": "http://localhost:5000",
+        - NOTE: this is the final move that connects the frontend to the backend and vice versa
+     2. npm install axios
+     3. from HomeScreen, define a state to save the product from backend
+     4. use chrome dev tools > network > (refresh page) > products > {headers, preview, response}... to confirm the data is actually coming from backend
