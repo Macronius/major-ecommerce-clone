@@ -3,27 +3,26 @@
 # Git Commits
 
 1. First Commit - setup
-2. Second
-3. Third
-4. Fourth
-5. Fifth
-6. Add routing
+2. Add data, create HomeScreen and ProductScreen, Add SPA routing
    1. npm install react-router-dom
    2. create route for home screen
    3. create router for product screen
         - because this is a single-page application, the entire page should not refresh each time a particular component is changed.  To avoid this, replace all anchor <a> tags with <Link> tags from react-router-dom, then replace the href= with to=
         - import { useParams } from "react-router-dom"; allows to extract the slug parameter from the url, which can then be used to call a prduct page according to which was clicked, according to what its slug property is set to
-7. Seventh
-8. Eight
-9.  Nineth
-10. Tenth
-11. Eleventh
-12. Twelvth
-13. Thirteenth
-14. Fourteenth
-15. Fifteenth
-16. Sixteenth
-17. Seventeenth
-18. Eightteenth
-19. Nineteenth
-20. Twentieth
+3. Create a Node.js server
+   1. cd to root folder, npm init
+   2. update backend package.json, right after name: add type: module (allows to use ES6 import and export feature)
+   3. add .js and .jsx extensions to all imports (as needed)
+   4. npm install express (from backend)
+   5. create server.js
+   6. add a start command as node backend/server.js
+   7. require express
+   8. create route for / return backened is ready
+   9. move products.js data from frontend to backend
+   10. create route for /api/products
+   11. return products from the /api/products route from server.js in the backend directory
+   12. (from backend)> npm install nodemon --save-dev
+        - note: --save-dev enables this to be used only for development, will not get shipped with _____
+        - (from backend) in package.json, confirm devDependencies: {} object
+        - (from backend) in package.json, in "scripts", at key:value... "start": "nodemon server.js",
+        - ^ this will allow the backend server to run with nodemon for continual update re-rendering automatically, initialized with npm start
