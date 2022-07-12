@@ -2,14 +2,14 @@
 
 # Git Commits
 
-1. First Commit - setup
+**1. First Commit - setup**
 2. Add data, create HomeScreen and ProductScreen, Add SPA routing
    1. npm install react-router-dom
    2. create route for home screen
    3. create router for product screen
         - because this is a single-page application, the entire page should not refresh each time a particular component is changed.  To avoid this, replace all anchor <a> tags with <Link> tags from react-router-dom, then replace the href= with to=
         - import { useParams } from "react-router-dom"; allows to extract the slug parameter from the url, which can then be used to call a prduct page according to which was clicked, according to what its slug property is set to
-3. Create a Node.js server
+**3. Create a Node.js server**
    1. cd to root folder, npm init
    2. update backend package.json, right after name: add type: module (allows to use ES6 import and export feature)
    3. add .js and .jsx extensions to all imports (as needed)
@@ -26,18 +26,18 @@
         - (from backend) in package.json, confirm devDependencies: {} object
         - (from backend) in package.json, in "scripts", at key:value... "start": "nodemon server.js",
         - ^ this will allow the backend server to run with nodemon for continual update re-rendering automatically, initialized with npm start
-  4. fetch products data from backend
+**4. fetch products data from backend**
      1. set proxy in package.json
         - (from frontend) in package.json, beneath "name":, add "proxy": "http://localhost:5000",
         - NOTE: this is the final move that connects the frontend to the backend and vice versa
      2. npm install axios
      3. from HomeScreen, define a state to save the product from backend
      4. use chrome dev tools > network > (refresh page) > products > {headers, preview, response}... to confirm the data is actually coming from backend
-4. manage state with useReducer() hook
+**5. manage state with useReducer() hook**
    1. define a reducer
    2. update fetch data
    3. get state from reducer
-5. add bootstrap UI framework
+**6. add bootstrap UI framework**
    1. npm install bootstrap react-bootstrap react-router-bootstrap
    2. update App.js to reflect bootstrap component and class-style references
    3. replace App.js <header> with react-bootstrap/Navbar
