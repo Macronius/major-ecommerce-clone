@@ -33,3 +33,7 @@
      2. npm install axios
      3. from HomeScreen, define a state to save the product from backend
      4. use chrome dev tools > network > (refresh page) > products > {headers, preview, response}... to confirm the data is actually coming from backend
+4. manage state with useReducer() hook
+   1. define a reducer
+   2. update fetch data
+   3. get state from reducer
