@@ -37,3 +37,10 @@
    1. define a reducer
    2. update fetch data
    3. get state from reducer
+5. add bootstrap UI framework
+   1. npm install bootstrap react-bootstrap react-router-bootstrap
+   2. update App.js to reflect bootstrap component and class-style references
+   3. replace App.js <header> with react-bootstrap/Navbar
+   4. surround Navbar and main contents with react-bootstrap/Container to ensure page contents align vertically
+   5. divided screen into three sections,
+   6. set display flex to main container, then flex 1'd the middle container to take up the remaining page space;
