@@ -1,8 +1,13 @@
+//react
 import React, { useEffect, useReducer } from 'react';
-
-import { Link } from 'react-router-dom';
+//axios
 import axios from 'axios';
+//use-reducer-logger
 import logger from 'use-reducer-logger';
+// react-bootstrap
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Product from '../components/Product.component';
 
 // javascript reducer function
 const reducer = (state, action) => {
@@ -18,6 +23,7 @@ const reducer = (state, action) => {
   }
 };
 
+//default functional component
 export default function HomeScreen() {
   const [{ loading, error, products }, dispatch] = useReducer(logger(reducer), {
     loading: true,
@@ -43,26 +49,20 @@ export default function HomeScreen() {
   return (
     <div>
       <h1>Featured Products</h1>
-      {loading && <h1>Loading...</h1>}
-      {error && <h1>{error}</h1>}{' '}
-      {/* troubleshoot: if this doesn't work, video 11, 9:09 */}
       <div className="products">
-        {products.map((product) => (
-          <div className="product" key={product.slug}>
-            <Link to={`/product/${product.slug}`}>
-              <img src={product.image} alt={product.name} />
-            </Link>
-            <div className="product-info">
-              <Link to={`/product/${product.slug}`}>
-                <p>{product.name}</p>
-              </Link>
-              <p>
-                <strong>${product.price}</strong>
-              </p>
-              <button>Add to cart</button>
-            </div>
-          </div>
-        ))}
+        {loading ? (
+          <div>Loading...</div>
+        ) : error ? (
+          <div>{error}</div>
+        ) : (
+          <Row>
+            {products.map((product) => (
+              <Col key={product.slug} sm="6" md="4" lg="3" className="mb-3">
+                <Product product={product}></Product>
+              </Col>
+            ))}
+          </Row>
+        )}
       </div>
     </div>
   );

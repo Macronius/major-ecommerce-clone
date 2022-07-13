@@ -44,3 +44,7 @@
    4. surround Navbar and main contents with react-bootstrap/Container to ensure page contents align vertically
    5. divided screen into three sections,
    6. set display flex to main container, then flex 1'd the middle container to take up the remaining page space;
+7. create Product and Rating components
+   1.  moved product logic into its own component
+   2.  5-star rating system with num of reviews
+   3.  changed button color
