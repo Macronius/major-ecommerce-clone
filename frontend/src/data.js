@@ -18,7 +18,7 @@ const data = {
       category: 'Shirts',
       image: '/images/p2.jpg', //679 x 829
       price: 60,
-      countInStock: 20,
+      countInStock: 0,
       brand: 'Adidas',
       rating: 4,
       numReviews: 10,
@@ -29,8 +29,8 @@ const data = {
       slug: 'original-penguin-button',
       category: 'Shirts',
       image: '/images/p3.jpg', //679 x 829
-      price: 80,
-      countInStock: 50,
+      price: 90,
+      countInStock: 0,
       brand: 'Original Penguin',
       rating: 4.5,
       numReviews: 10,

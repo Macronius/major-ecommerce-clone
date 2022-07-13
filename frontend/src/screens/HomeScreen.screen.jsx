@@ -4,10 +4,14 @@ import React, { useEffect, useReducer } from 'react';
 import axios from 'axios';
 //use-reducer-logger
 import logger from 'use-reducer-logger';
-// react-bootstrap
+//react-bootstrap
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Product from '../components/Product.component';
+import { Helmet } from 'react-helmet-async';
+//components
+import LoadingBox from '../components/LoadingBox.component';
+import MessageBox from '../components/MessageBox.component';
 
 // javascript reducer function
 const reducer = (state, action) => {
@@ -48,12 +52,17 @@ export default function HomeScreen() {
 
   return (
     <div>
+      <Helmet>
+        <title>Amazana</title>
+      </Helmet>
       <h1>Featured Products</h1>
       <div className="products">
         {loading ? (
-          <div>Loading...</div>
+          <LoadingBox />
         ) : error ? (
-          <div>{error}</div>
+          <MessageBox variant="danger">
+            {error}
+          </MessageBox>
         ) : (
           <Row>
             {products.map((product) => (

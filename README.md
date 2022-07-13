@@ -44,7 +44,24 @@
    4. surround Navbar and main contents with react-bootstrap/Container to ensure page contents align vertically
    5. divided screen into three sections,
    6. set display flex to main container, then flex 1'd the middle container to take up the remaining page space;
-7. create Product and Rating components
+**7. create Product and Rating components**
    1.  moved product logic into its own component
    2.  5-star rating system with num of reviews
    3.  changed button color
+   4.  on HomeScreen, changed product list to bootstrap
+**8. Product Screen**
+   1. create product details screen
+      1. fetch product from backend
+      2. create three columns: image, info, action
+      3. npm install react-helmet-async
+         4. allows browser tab title to reflect the current page's content (and other webpage metadata)
+         5. wrap <App> component with <HelmetProvider>, which enables children to utilize <Helmet>
+         6. implemented in HomeScreen and ProductScreen
+      4. (from backend) in server.js, added a new api to return product information based on slug
+      5. enable ProductScreen details image to take up 100% of its container width
+   2. create Loading and Message components
+      1. create loading component
+      2. use spinner component
+      3. create message component
+      4. (from backend) create utils.js to define getError() function to interact with server.js api error handling
+      5. implemented LoadingBox and MessageBox components in HomeScreen and ProductScreen

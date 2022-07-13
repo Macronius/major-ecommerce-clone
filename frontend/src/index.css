@@ -42,3 +42,14 @@ main {
 .rating span i {
   color: #ffc000;
 }
+
+.img-large {
+  max-width: 100%;
+}
+
+
+footer {
+  background-color: #212529;   /* bootstrap dark theme */
+  color: white;
+  padding: 1.125rem;
+}
