@@ -4,7 +4,6 @@ import { useContext, useEffect, useReducer } from 'react';
 import { useParams } from 'react-router-dom';
 //axios
 import axios from 'axios';
-
 //react-bootstrap
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
@@ -62,10 +61,30 @@ function ProductScreen() {
     fetchData();
   }, [slug]);
 
-  //NOTE: by using context, we can have access to the state of the context and change the context
+
+  //  NOTE: by using context, we can have access to the state of the context and change the context
   const {state, dispatch: ctxDispatch} = useContext(Store);
-  const addToCartHandler = () => {
-    ctxDispatch({type: 'CART_ADD_ITEM', payload: {...product, quantity: 1}});
+  const {cart} = state;
+  const addToCartHandler = async () => {
+
+    //  determine if item already exists in cart
+    const existingItem = cart.cartItems.find( x => x._id === product._id);
+    //  if so, then increase current quantity by one, else set to one
+    const quantity = existingItem ? existingItem.quantity + 1 : 1;
+    // const quantity = existingItem  &&  existingItem.quantity + 1; 
+    //QUESTION: why doesn't this work (return NaN)?
+
+    const {data} = await axios.get(`/api/products/${product._id}`);
+
+    if (data.countInStock < quantity) {
+      window.alert("Sorry, this product is out of stock");
+      return;
+    }
+
+    ctxDispatch({
+      type: 'CART_ADD_ITEM', 
+      payload: {...product, quantity}
+    });
   }
 
   return loading ? (

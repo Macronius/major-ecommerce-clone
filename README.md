@@ -74,3 +74,9 @@
       2. use in index.js to wrap the entire App component
    4. implement an 'add to cart' button with an onClick handler
       1. onClick, a badge in the navbar will reflect cart quantity total
+**10. refactor add-to-cart functionality to check 'inventory' from the backend, and prevent item duplication**
+   1. (from backend) in data.js, add _id: key/value to each products object
+      1. adding an id to each allows each to be unique
+      2. note: _id, the underline makes compatible with MongoDB for future application
+   2. check if item exists in cart
+   3. check if count in stock is > count in cart request

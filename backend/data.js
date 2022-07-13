@@ -1,6 +1,7 @@
 const data = {
   products: [
     {
+      _id: '1',
       name: 'Nike Slim shirt',
       slug: 'nike-slim-shirt',
       category: 'Shirts',
@@ -13,6 +14,7 @@ const data = {
       description: 'high quality shirt',
     },
     {
+      _id: '2',
       name: 'Adidas Fit shirt',
       slug: 'adidas-fit-shirt',
       category: 'Shirts',
@@ -25,6 +27,7 @@ const data = {
       description: 'even higher quality shirt',
     },
     {
+      _id: '3',
       name: 'Original Penguin Button',
       slug: 'original-penguin-button',
       category: 'Shirts',
@@ -37,6 +40,7 @@ const data = {
       description: 'high quality shirt',
     },
     {
+      _id: '4',
       name: 'Ralph Lauren Chino',
       slug: 'ralph-lauren-chino',
       category: 'Pants',

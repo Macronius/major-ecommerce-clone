@@ -5,34 +5,36 @@ import { createContext, useReducer } from 'react';
 
 export const Store = createContext();
 
-
-
 const initialState = {
-    cart: {
-        cartItems: [],
-    },
+  cart: {
+    cartItems: [],
+  },
 };
 
-const reducer = (state,action) => {
+const reducer = (state, action) => {
+  switch (action.type) {
+    case 'CART_ADD_ITEM':
+        
+      //  obtain one of each possible instance of data for comparison (payload = single clothing item)
+      const newItem = action.payload;
+      const existingItem = state.cart.cartItems.find(
+        (d) => d._id === newItem._id
+      );
 
-    switch(action.type) {
-        case 'CART_ADD_ITEM':
-            // add item to cart
-            return {
-                ...state,
-                cart: {
-                    ...state.cart,
-                    cartItems: [
-                        ...state.cart.cartItems,
-                        action.payload
-                    ]
-                }
-            }
-        default:
-            return state;
-    }
+      //  update cartItems as needed
+      const cartItems = existingItem
+        ? state.cart.cartItems.map((d) =>
+            d._id === existingItem._id ? newItem : d
+          )
+        : [...state.cart.cartItems, newItem];
 
-}
+      //  return new state object with updated cartItems array
+      return { ...state, cart: { ...state.cart, cartItems } };
+
+    default:
+      return state;
+  }
+};
 
 export function StoreProvider(props) {
   const [state, dispatch] = useReducer(reducer, initialState);
