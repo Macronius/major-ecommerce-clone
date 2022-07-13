@@ -1,16 +1,25 @@
-import React from 'react';
-
+//react
+import React, { useContext } from 'react';
+//react-router-dom
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
-
-import HomeScreen from './screens/HomeScreen.screen.jsx';
-import ProductScreen from './screens/ProductScreen.screen.jsx';
-// react-bootstrap
+//react-bootstrap
 import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
-// react-router-bootstrap
+import Nav from 'react-bootstrap/Nav';
+import Badge from 'react-bootstrap/Badge';
+//react-router-bootstrap
 import { LinkContainer } from 'react-router-bootstrap';
+//components
+import HomeScreen from './screens/HomeScreen.screen.jsx';
+import ProductScreen from './screens/ProductScreen.screen.jsx';
+import { Store } from './Store.jsx';
 
 function App() {
+
+  //NOTE: don't required dispatch because only using value, not changing anything
+  const {state} = useContext(Store);
+  const {cart} = state;
+
   return (
     <BrowserRouter>
       <div className="d-flex flex-column site-container">
@@ -22,6 +31,21 @@ function App() {
                   amazama
                 </Navbar.Brand>
               </LinkContainer>
+
+              <Nav className="me-auto">
+                <Link to="/cart" className="nav-link">
+                  Cart
+                  {
+                    cart.cartItems.length > 0  &&  (
+                      <Badge pill bg="danger">
+                        {
+                          cart.cartItems.length
+                        }
+                      </Badge>
+                    )
+                  }
+                </Link>
+              </Nav>
             </Container>
           </Navbar>
         </header>

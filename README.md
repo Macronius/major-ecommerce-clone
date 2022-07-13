@@ -65,3 +65,12 @@
       3. create message component
       4. (from backend) create utils.js to define getError() function to interact with server.js api error handling
       5. implemented LoadingBox and MessageBox components in HomeScreen and ProductScreen
+**9. implement add-to-cart functionalituy**
+   1. create a React Context
+      1. https://reactjs.org/docs/context.html
+   2. define a reducer
+   3. create a Store Provider 
+      1. to save items from the cart into a global state, to be used in the navbar
+      2. use in index.js to wrap the entire App component
+   4. implement an 'add to cart' button with an onClick handler
+      1. onClick, a badge in the navbar will reflect cart quantity total

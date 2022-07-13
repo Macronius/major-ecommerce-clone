@@ -1,0 +1,43 @@
+//NOTE: React Context needs a store
+import { createContext, useReducer } from 'react';
+
+//value contains current state in the context, and the dispatch to update the state
+
+export const Store = createContext();
+
+
+
+const initialState = {
+    cart: {
+        cartItems: [],
+    },
+};
+
+const reducer = (state,action) => {
+
+    switch(action.type) {
+        case 'CART_ADD_ITEM':
+            // add item to cart
+            return {
+                ...state,
+                cart: {
+                    ...state.cart,
+                    cartItems: [
+                        ...state.cart.cartItems,
+                        action.payload
+                    ]
+                }
+            }
+        default:
+            return state;
+    }
+
+}
+
+export function StoreProvider(props) {
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  const value = { state, dispatch };
+
+  return <Store.Provider value={value}>{props.children}</Store.Provider>;
+}

@@ -1,11 +1,10 @@
 //react
-import { useEffect, useReducer } from 'react';
+import { useContext, useEffect, useReducer } from 'react';
 //react-router-dom
 import { useParams } from 'react-router-dom';
 //axios
 import axios from 'axios';
-//components
-import Rating from '../components/Rating.component';
+
 //react-bootstrap
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
@@ -19,6 +18,9 @@ import LoadingBox from '../components/LoadingBox.component';
 import MessageBox from '../components/MessageBox.component';
 //utility functions
 import { getError } from '../utils';
+import { Store } from '../Store';
+//components
+import Rating from '../components/Rating.component';
 
 
 // javascript reducer function
@@ -59,6 +61,12 @@ function ProductScreen() {
 
     fetchData();
   }, [slug]);
+
+  //NOTE: by using context, we can have access to the state of the context and change the context
+  const {state, dispatch: ctxDispatch} = useContext(Store);
+  const addToCartHandler = () => {
+    ctxDispatch({type: 'CART_ADD_ITEM', payload: {...product, quantity: 1}});
+  }
 
   return loading ? (
     <LoadingBox />
@@ -121,7 +129,12 @@ function ProductScreen() {
                 {product.countInStock > 0 && (
                   <ListGroup.Item>
                     <div className="d-grid">
-                      <Button variant="primary">Add to Cart</Button>
+                      <Button
+                        variant="primary"
+                        onClick={addToCartHandler}
+                      >
+                        Add to Cart
+                      </Button>
                       {/* NOTE: bc parent has className d-grid, button will take up full width */}
                     </div>
                   </ListGroup.Item>
