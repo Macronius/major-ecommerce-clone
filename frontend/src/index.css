@@ -53,3 +53,7 @@ footer {
   color: white;
   padding: 1.125rem;
 }
+
+.img-thumbnail {
+  height: 80px;
+}

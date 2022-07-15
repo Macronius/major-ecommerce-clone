@@ -80,3 +80,18 @@
       2. note: _id, the underline makes compatible with MongoDB for future application
    2. check if item exists in cart
    3. check if count in stock is > count in cart request
+**11. Create Cart Screen**
+   1. design layout
+      - https://excalidraw.com/#json=cVGX9wOezv8rivtx90m12,ttjmbE41lmw4t7K-DFG9lw
+   2. from App, add new route to= CartScreen
+   3. useNavigate to navigate user to CartScreen following 'add to cart' button
+   4. (from HomeScreen) add functionality btns.add-to-cart
+      1. add item to cart
+      2. if (outOfStock) button disabled
+   5. (from CartScreen) add functionality of buttons: -, +, remove
+   6. (from Store) added CART_REMOVE_ITEM case
+   7. (from Store) moved initial cartItems value to localStorage
+   8. add functionality to update localStorage of cartItems changes, prevent lost progress on refresh
+   9. create SignInScreen
+   10. add functionality: continueToCheckout -> SignInScreen
+   11. (from ProductScreen) implement addToCartHandler

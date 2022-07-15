@@ -22,5 +22,17 @@ __**Array.prototype.reduce()**__
 
 
 
+
+
+
+
+
+
+REACT-BOOTSTRAP :
 # react-bootstrap/Navbar.Brand
 https://react-bootstrap.netlify.app/components/navbar/#brand
+
+
+# react-bootstrap/ListGroup
+<ListGroup> is equivalent of <ul>
+<ListGroup.Item> is equivalent of <li>

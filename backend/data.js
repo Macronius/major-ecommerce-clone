@@ -33,7 +33,7 @@ const data = {
       category: 'Shirts',
       image: '/images/p3.jpg', //679 x 829
       price: 80,
-      countInStock: 50,
+      countInStock: 0,
       brand: 'Original Penguin',
       rating: 4.5,
       numReviews: 10,

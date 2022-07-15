@@ -12,10 +12,12 @@ import { LinkContainer } from 'react-router-bootstrap';
 //components
 import HomeScreen from './screens/HomeScreen.screen.jsx';
 import ProductScreen from './screens/ProductScreen.screen.jsx';
+import CartScreen from './screens/CartScreen.screen.jsx';
+//context
 import { Store } from './Store.jsx';
 
 function App() {
-  //NOTE: don't required dispatch because only using value, not changing anything
+  //NOTE: doesn't required dispatch, as in {state, dispatch}, because only using value, not changing anything, and therefore do not need to dispatch change
   const { state } = useContext(Store);
   const { cart } = state;
 
@@ -47,6 +49,7 @@ function App() {
           <Container className="mt-3">
             <Routes>
               <Route path="/product/:slug" element={<ProductScreen />} />
+              <Route path="/cart" element={<CartScreen />} />
               <Route path="/" element={<HomeScreen />} />
             </Routes>
           </Container>

@@ -42,7 +42,7 @@ const data = {
       category: 'Pants',
       image: '/images/p4.jpg', //679 x 829
       price: 60,
-      countInStock: 12,
+      countInStock: 0,
       brand: 'Ralph Lauren',
       rating: 4.3,
       numReviews: 4,

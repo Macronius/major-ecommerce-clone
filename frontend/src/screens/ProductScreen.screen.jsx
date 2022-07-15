@@ -1,7 +1,7 @@
 //react
 import { useContext, useEffect, useReducer } from 'react';
 //react-router-dom
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 //axios
 import axios from 'axios';
 //react-bootstrap
@@ -21,7 +21,6 @@ import { Store } from '../Store';
 //components
 import Rating from '../components/Rating.component';
 
-
 // javascript reducer function
 const reducer = (state, action) => {
   switch (action.type) {
@@ -37,8 +36,11 @@ const reducer = (state, action) => {
 };
 
 function ProductScreen() {
+
+  const navigate = useNavigate();
+
   const params = useParams();
-  //   console.log('params: ', params);
+    console.log('params: ', params);
   const { slug } = params;
 
   const [{ loading, error, product }, dispatch] = useReducer(reducer, {
@@ -61,31 +63,27 @@ function ProductScreen() {
     fetchData();
   }, [slug]);
 
-
   //  NOTE: by using context, we can have access to the state of the context and change the context
-  const {state, dispatch: ctxDispatch} = useContext(Store);
-  const {cart} = state;
+  const { state, dispatch: dispatchContext } = useContext(Store);
+  const { cart } = state;
   const addToCartHandler = async () => {
-
     //  determine if item already exists in cart
-    const existingItem = cart.cartItems.find( x => x._id === product._id);
+    const existingItem = cart.cartItems.find((x) => x._id === product._id);
     //  if so, then increase current quantity by one, else set to one
     const quantity = existingItem ? existingItem.quantity + 1 : 1;
-    // const quantity = existingItem  &&  existingItem.quantity + 1; 
+    // const quantity = existingItem  &&  existingItem.quantity + 1;
     //QUESTION: why doesn't this work (return NaN)?
-
-    const {data} = await axios.get(`/api/products/${product._id}`);
-
+    const { data } = await axios.get(`/api/products/${product._id}`);
     if (data.countInStock < quantity) {
-      window.alert("Sorry, this product is out of stock");
+      window.alert('Sorry, not enough of this product to complete your current order request');
       return;
     }
-
-    ctxDispatch({
-      type: 'CART_ADD_ITEM', 
-      payload: {...product, quantity}
+    dispatchContext({
+      type: 'CART_ADD_ITEM',
+      payload: { ...product, quantity },
     });
-  }
+    navigate('/cart');
+  };
 
   return loading ? (
     <LoadingBox />
@@ -105,10 +103,10 @@ function ProductScreen() {
         <Col md={3}>
           <ListGroup>
             <ListGroup.Item>
-                <Helmet>
-                    <title>{product.name}</title>
-                </Helmet>
-                <h1>{product.name}</h1>
+              <Helmet>
+                <title>{product.name}</title>
+              </Helmet>
+              <h1>{product.name}</h1>
             </ListGroup.Item>
             <ListGroup.Item>
               <Rating rating={product.rating} numReviews={product.numReviews} />
@@ -148,10 +146,7 @@ function ProductScreen() {
                 {product.countInStock > 0 && (
                   <ListGroup.Item>
                     <div className="d-grid">
-                      <Button
-                        variant="primary"
-                        onClick={addToCartHandler}
-                      >
+                      <Button variant="primary" onClick={addToCartHandler}>
                         Add to Cart
                       </Button>
                       {/* NOTE: bc parent has className d-grid, button will take up full width */}
