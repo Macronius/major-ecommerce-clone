@@ -25,7 +25,7 @@ export default function CartScreen() {
     },
   } = state;
   //enable
-  const navigate = useNavigate;
+  const navigate = useNavigate();
 
   const updateCartHandler = async (item, quantity) => {
     const { data } = await axios.get(`/api/products/${item._id}`);

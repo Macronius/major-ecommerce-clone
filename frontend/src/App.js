@@ -9,10 +9,11 @@ import Nav from 'react-bootstrap/Nav';
 import Badge from 'react-bootstrap/Badge';
 //react-router-bootstrap
 import { LinkContainer } from 'react-router-bootstrap';
-//components
+//screens
 import HomeScreen from './screens/HomeScreen.screen.jsx';
 import ProductScreen from './screens/ProductScreen.screen.jsx';
 import CartScreen from './screens/CartScreen.screen.jsx';
+import SignInScreen from './screens/SignInScreen.screen.jsx';
 //context
 import { Store } from './Store.jsx';
 
@@ -50,6 +51,7 @@ function App() {
             <Routes>
               <Route path="/product/:slug" element={<ProductScreen />} />
               <Route path="/cart" element={<CartScreen />} />
+              <Route path="/signin" element={<SignInScreen />} />
               <Route path="/" element={<HomeScreen />} />
             </Routes>
           </Container>

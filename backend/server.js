@@ -29,8 +29,6 @@ app.get('/api/products/:id', (req, res) => {
     res.send(data.products)
 });
 
-
-
 //define the port that we are going to respond for the backend
 const port = process.env.PORT || 5000;
 

@@ -1,10 +1,80 @@
 RESOURCE LINKS
 
 
+
+
+**Node.js**
+-     URLSearchParams constructor to parse
+-     https://www.geeksforgeeks.org/node-js-urlsearchparams-api/?ref=gcse
+-     The URLSearchParams class is a global object and used with one of the four following constructors:
+      1 new URLSearchParams(): No argument constructor instantiates a new empty URLSearchParams object.
+      2 new URLSearchParams(string): Accepts a string as an argument to instantiate a new URLSearchParams object.
+      3 new URLSearchParams(obj): Accepts an object with a collection of key-value pairs to instantiate a new URLSearchParams object. The key-value pair of obj are always coerced to strings. Duplicate keys are not allowed.
+      4 new URLSearchParams(iterable): Accepts an iterable object having a collection of key-value pairs to instantiate a new URLSearchParams object. Iterable can be any iterable object. Since URLSearchParams is iterable, an iterable object can be another URLSearchParams, where the constructor will create a clone of the provided URLSearchParams. Duplicate keys are allowed.
+
+
+
+
+
+
+
+
+
+
+**React Router Dom**
+__useLocation__  
+-     https://www.geeksforgeeks.org/react-router-hooks/
+-     This hook returns the location object used by the react-router. 
+-     This object represents the current URL and is immutable. 
+-     Whenever the URL changes, the useLocation() hook returns a newly updated location object. 
+-     Some of its use includes extracting the query parameters from the URL and doing something depending on the query parameters. 
+-     The “search” property of the location object returns a string containing the query part of the URL.
+-     
+
+-     
+
+
+
+
+
+
+
+
+
+
+**React Bootstrap**
 https://react-bootstrap.netlify.app/components/navbar/#color-schemes
+- my-#  margin top and bottom
+
+
+
+
+
+
+
+
+
 
 **React Context**
 https://reactjs.org/docs/context.html
+
+
+
+
+
+
+
+
+
+**React Helmet Async**
+
+
+
+
+
+
+
+
 
 
 
