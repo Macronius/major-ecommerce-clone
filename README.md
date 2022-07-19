@@ -112,3 +112,27 @@
       - https://excalidraw.com/#json=20i4dUdYB2weyrPl6QVrD,AMOEnw01vuUuYo5ef08Kaw
       - email, password, submit
       - https://react-bootstrap.netlify.app/forms/overview/#rb-docs-content
+   2. Connect to MongoDB Database
+      1. create atlas mongoDB database
+         1. create project
+         2. add database
+            1. Shared (FREE)
+            2. choose service, location, cluster name, create Cluster
+            3. set up Username and Password for database
+            4. establish where to connect from: IP Address and description
+            5. Add my own data
+               1. Create Database
+                  - database name
+                  - collection name
+         3. connect database to project
+      2. install local MongoDB database
+      3. create .env file in backend
+         - constant MONGODB_URI = copy uri info from mongodb atlas site dashboard
+      4. (from backend) npm install Mongoose (schema)
+      5. (from backend) npm install dotenv
+      6. add both to server.js
+      7. connect to MongoDB database
+   3. Download and install MongoDB Compass Community
+      1. connect...   mongodb://localhost
+      2. set up a new database and collection
+      3. update the .env file 
