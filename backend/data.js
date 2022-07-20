@@ -1,7 +1,25 @@
+import bcrypt from 'bcryptjs';
+
 const data = {
+  users: [
+    {
+      name: 'Marcus',
+      email: 'marconiushenry@gmail.com',
+      // password: 'passwordAdmin',
+      // password: bcrypt.hashSync('passwordAdmin'),
+      password: bcrypt.hashSync('123456'),
+      isAdmin: true
+    },
+    {
+      name: 'Fable',
+      email: 'fable@sg1.gov',
+      password: bcrypt.hashSync('123456'),
+      isAdmin: false
+    },
+  ],
   products: [
     {
-      _id: '1',
+      // _id: '1',
       name: 'Nike Slim shirt',
       slug: 'nike-slim-shirt',
       category: 'Shirts',
@@ -14,7 +32,7 @@ const data = {
       description: 'high quality shirt',
     },
     {
-      _id: '2',
+      // _id: '2',
       name: 'Adidas Fit shirt',
       slug: 'adidas-fit-shirt',
       category: 'Shirts',
@@ -27,7 +45,7 @@ const data = {
       description: 'even higher quality shirt',
     },
     {
-      _id: '3',
+      // _id: '3',
       name: 'Original Penguin Button',
       slug: 'original-penguin-button',
       category: 'Shirts',
@@ -40,7 +58,7 @@ const data = {
       description: 'high quality shirt',
     },
     {
-      _id: '4',
+      // _id: '4',
       name: 'Ralph Lauren Chino',
       slug: 'ralph-lauren-chino',
       category: 'Pants',

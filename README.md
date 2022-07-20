@@ -136,3 +136,30 @@
       1. connect...   mongodb://localhost
       2. set up a new database and collection
       3. update the .env file 
+   4. Seed Sample Data to new MongoDB - local
+      1. create backend models directory
+      2. create Product Model
+         1. create Schema
+            - import mongoose to define schema
+            - https://mongoosejs.com/docs/index.html
+            - https://mongoosejs.com/docs/api/mongoose.html#mongoose_Mongoose-Schema
+            - https://mongoosejs.com/docs/api/schema.html
+            - first: mongoose.Schema takes required first parameter object to define the schema, and an optional second parameter, which can be 'timestamp', which adds two more data: create-time and update-time
+         2. create Model based on Schema
+            - https://mongoosejs.com/docs/api/model.html
+            - https://mongoosejs.com/docs/api/model.html#model_Model
+      3. create User Model
+      4. "seed" or create products into the database using Express
+         - http://expressjs.com/en/guide/routing.html#express-router
+         - https://mongoosejs.com/docs/api/model.html#model_Model-remove
+         - https://mongoosejs.com/docs/api.html#model_Model-insertMany
+      5. use route in server.js
+      6. seed sample product
+      7. Create User Model
+         - seed sample users
+           - use bCrypt
+           - https://github.com/kelektiv/node.bcrypt.js#readme
+         - create user model
+         - create user routes
+         - create sample users (admin & customer), generate encrypted passwords for each
+         - npm install bcryptjs
