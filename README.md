@@ -163,3 +163,9 @@
          - create user routes
          - create sample users (admin & customer), generate encrypted passwords for each
          - npm install bcryptjs
+   5. Create Sign-In Backend API
+      1. create sign-in api
+      2. npm install jsonwebtoken
+      3. define generateToken
+      4. install Chrome dev extension Advanced REST client
+         - https://chrome.google.com/webstore/detail/advanced-rest-client/hgmloofddffdnphfgcellkdfbfbjeloo?hl=en-US

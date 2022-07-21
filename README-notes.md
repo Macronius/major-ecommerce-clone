@@ -1,6 +1,20 @@
+STATUS CODES
+500: server error
+
 RESOURCE LINKS
 **Express.js**
 - http://expressjs.com/en/guide/routing.html#express-router
+
+- Express.js | app.use() Function
+  - https://www.geeksforgeeks.org/express-js-app-use-function/
+  - The app.use() function is used to mount the specified middleware function(s) at the path which is being specified.
+  - It is mostly used to set up middleware for your application.
+
+Methods
+- http://expressjs.com/en/api.html#express.json
+  - 
+- http://expressjs.com/en/api.html#express.urlencoded
+  - 
 
 
 
@@ -159,3 +173,30 @@ https://react-bootstrap.netlify.app/components/navbar/#brand
 **bCrypt**
 for password encryption: hash & salt
 https://github.com/kelektiv/node.bcrypt.js#readme
+      -compareSync(plain-text, encrypted)
+
+
+
+
+**express-async-handler**
+npm install express-async-handler
+https://www.npmjs.com/package/express-async-handler
+- Simple middleware for handling exceptions inside of async express routes and passing them to your express error handlers.
+
+
+**jsonwebtoken**
+npm install jsonwebtoken
+- https://www.npmjs.com/package/jsonwebtoken
+- https://github.com/auth0/node-jsonwebtoken#readme
+- import jwt from 'jsonwebtoken';
+
+
+
+
+
+
+
+
+
+CHROME EXTENSIONS:
+Advanced REST client - https://chrome.google.com/webstore/detail/advanced-rest-client/hgmloofddffdnphfgcellkdfbfbjeloo?hl=en-US
