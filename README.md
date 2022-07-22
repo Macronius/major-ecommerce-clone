@@ -169,3 +169,18 @@
       3. define generateToken
       4. install Chrome dev extension Advanced REST client
          - https://chrome.google.com/webstore/detail/advanced-rest-client/hgmloofddffdnphfgcellkdfbfbjeloo?hl=en-US
+   6. Complete Sign-In Screen
+      1. handle submit action
+         - set user's sign-in email and password to state
+      2. save token in store and local storage
+      3. then redirect user according to search parameter in url
+      4. show user name in header
+         - App.js > Nav
+         - fetch userInfo from store
+      5. prevent user from accessing SignInScreen if already signed in
+      6. (from frontend) npm install toastify
+         - use instead of alert() to show error message
+      7. use context state.userInfo to dynamically render complication in navbar
+      8. add two new actions to Store.js
+         - USER_SIGNIN
+         - USER_SIGNOUT

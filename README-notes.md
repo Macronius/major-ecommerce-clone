@@ -1,7 +1,45 @@
 STATUS CODES
 500: server error
 
+
+
+
+
+
+
+
+
+
+**localStorage**
+- localStorage.setItem('name', data);
+- localStorage.getItem('name');
+- localStorage.removeItem('name');
 RESOURCE LINKS
+**Axios.js**
+      - https://axios-http.com/
+      - https://www.digitalocean.com/community/tutorials/js-axios-vanilla-js
+Axios.post()
+      - https://axios-http.com/docs/post_example
+      - result: {
+            config: {},
+            data: {},
+            headers: {},
+            request: {},
+            status: #,
+            statusText: ""
+        }
+  
+Axios.get()
+
+
+
+
+
+
+
+
+
+
 **Express.js**
 - http://expressjs.com/en/guide/routing.html#express-router
 
@@ -83,9 +121,12 @@ __useLocation__
 -     Whenever the URL changes, the useLocation() hook returns a newly updated location object. 
 -     Some of its use includes extracting the query parameters from the URL and doing something depending on the query parameters. 
 -     The “search” property of the location object returns a string containing the query part of the URL.
+
+useNavigate and Link are very similar, though one (Link) is used within the JSX, while the other (useNavigate) is used directly inside the javascript logic
+__useNavigate__
 -     
 
--     
+__Link__
 
 
 
@@ -96,6 +137,18 @@ __useLocation__
 
 
 
+REACT-BOOTSTRAP :
+# react-bootstrap/Container
+# react-bootstrap/Navbar
+# react-bootstrap/Navbar.Brand
+https://react-bootstrap.netlify.app/components/navbar/#brand
+# react-bootstrap/Nav
+# react-bootstrap/NavDropdown
+# react-bootstrap/Badge
+
+# react-bootstrap/ListGroup
+<ListGroup> is equivalent of <ul>
+<ListGroup.Item> is equivalent of <li>
 **React Bootstrap**
 https://react-bootstrap.netlify.app/components/navbar/#color-schemes
 - my-#  margin top and bottom
@@ -131,7 +184,26 @@ https://reactjs.org/docs/context.html
 
 
 
+**React Toaastify**
+npm install react-toastify
+- https://fkhadra.github.io/react-toastify/introduction/
+- 
+- import { toast } from 'react-toastify';
+- toast.error('')
+- 
+- import { ToastContainer } from 'react-toastify';
+- <ToastContainer position="bottom-center" limit={1} />
 
+
+
+
+
+
+
+
+
+
+JAVASCRIPT :
 __**Array.prototype.find()**__
 - The find() method **returns the first element** in the provided array that satisfies the provided testing function. 
 - If no values satisfy the testing function, undefined is returned.
@@ -144,6 +216,17 @@ __**Array.prototype.reduce()**__
 - The first time that the callback is run there is no "return value of the previous calculation". If supplied, an initial value may be used in its place. Otherwise the array element at index 0 is used as the initial value and iteration starts from the next element (index 1 instead of index 0).
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
 
+__**URL API**__
+__Queries__
+      - https://developer.mozilla.org/en-US/docs/Web/API/URL_API
+      - Queries
+      - The search property on a URL contains the query string portion of the URL. 
+      - For example, if the URL is https://example.com/login?user=someguy&page=news, then the value of the search property is ?user=someguy&page=news. 
+      - You can also look up the values of individual parameters with the URLSearchParams object's get() method:
+
+__URLSearchParams()__
+      - https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams
+      - 
 
 
 
@@ -152,14 +235,9 @@ __**Array.prototype.reduce()**__
 
 
 
-REACT-BOOTSTRAP :
-# react-bootstrap/Navbar.Brand
-https://react-bootstrap.netlify.app/components/navbar/#brand
 
 
-# react-bootstrap/ListGroup
-<ListGroup> is equivalent of <ul>
-<ListGroup.Item> is equivalent of <li>
+
 
 
 
@@ -198,5 +276,18 @@ npm install jsonwebtoken
 
 
 
-CHROME EXTENSIONS:
+
+**CHROME EXTENSIONS:**
 Advanced REST client - https://chrome.google.com/webstore/detail/advanced-rest-client/hgmloofddffdnphfgcellkdfbfbjeloo?hl=en-US
+
+
+
+
+
+
+
+
+
+
+**QUESTIONS:**
+- does /api imply backend?
